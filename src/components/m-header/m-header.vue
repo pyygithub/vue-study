@@ -1,9 +1,11 @@
 <template>
   <div class="m-header" ref="top">
+    <!-- logo文字 -->
     <div class="header-logo">
       <h1>Lambda</h1>
     </div>
 
+    <!--导航列表-->
     <div class="header-nav-list">
       <ul>
         <router-link tag="li" to="/home"><span>首页</span></router-link>
@@ -17,6 +19,7 @@
       </div>
     </div>
 
+    <!--用户信息-->
     <div class="header-info">
       <router-link tag="a" to="/login">登录</router-link>
       <router-link tag="a" to="/reg">注册</router-link>
@@ -50,6 +53,7 @@
     position: fixed;
     z-index: 9999;
     width: 100%;
+    min-width: 1170px;
     display: flex;
     align-items: center;
     justify-content: space-between;
