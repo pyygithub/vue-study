@@ -52,3 +52,8 @@ ins {
   text-decoration:none;
 }
 
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+

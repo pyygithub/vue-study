@@ -28,6 +28,7 @@
           <h3 class="title">Kafka</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
@@ -40,6 +41,7 @@
           <h3 class="title">Spark</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Spark是类Hadoop MapReduce的通用并行框架，拥有Hadoop MapReduce所具有的优点，能更好地适用于数据挖掘与机器学习等需要迭代的MapReduce的算法。</p>
@@ -52,6 +54,7 @@
           <h3 class="title">Docker</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Docker是一个可以将任何应用包装在"LXC容器”中运行的工具。如果说VMware、KVM包装的虚拟机，那该工具包装的则是应用。它是一个实至名归的PaaS。</p>
@@ -64,6 +67,7 @@
           <h3 class="title">Hadoop</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
@@ -76,6 +80,7 @@
           <h3 class="title">Openstack</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
@@ -88,6 +93,7 @@
           <h3 class="title">Node.js</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Node.js是一个基于Chrome JavaScript运行时建立的平台，使用事件驱动、非阻塞I/O 模型而得以轻量和高效，适合在分布式设备上运行数据密集型的实时应用.</p>
@@ -100,6 +106,7 @@
           <h3 class="title">Kafka</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
@@ -112,6 +119,7 @@
           <h3 class="title">Kafka</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
@@ -124,11 +132,16 @@
           <h3 class="title">Kafka</h3>
           <p class="info">
             <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            &nbsp;|&nbsp;
             <span class="collectCount">136&nbsp; &nbsp;关注者</span>
           </p>
           <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
         </div>
       </div>
+    </div>
+
+    <div class="more">
+      <button>加载更多</button>
     </div>
   </div>
 </template>
@@ -147,6 +160,8 @@
 </script>
 
 <style scoped lang="less">
+
+  /*分类导航列表*/
   .category-list {
     display: flex;
     margin: 30px 0;
@@ -173,22 +188,24 @@
       }
     }
   }
+
+  /*项目列表*/
   .item-list {
-    width: 1170px;
+    width: 1120px;
     margin:0 auto;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap:wrap;
     .item {
-      width: 380px;
+      width: 360px;
       height: 370px;
       margin-bottom: 28px;
       padding: 2px;
       border: 1px solid #ccc;
       cursor: pointer;
       img {
-        width: 374px;
+        width: 354px;
         height: 206px;
       }
       .thumbnail-caption {
@@ -212,6 +229,22 @@
           overflow: hidden;
         }
       }
+    }
+  }
+
+  /*加载更多*/
+  .more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    button {
+      border: 1px solid #000;
+      padding: 7px  15px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2e3336;
+      color: #fff;
     }
   }
 </style>
