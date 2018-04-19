@@ -6,155 +6,84 @@
     <!--分类列表导航-->
     <div class="category-list">
       <ul>
-        <li class="active">全部</li>
-        <li>大数据</li>
-        <li>前端</li>
-        <li>后台</li>
-        <li>版本管理</li>
-        <li>移动应用</li>
-        <li>数据库</li>
-        <li>产品</li>
-        <li>人工智能</li>
-        <li>测试</li>
-        <li>其它</li>
+        <li @click="toggleCategory(tag)" :class="{active: tag.isActive}" v-for="(tag, index) in categoryTags" :key="index">{{tag.tagName}}</li>
       </ul>
     </div>
 
+
+
     <!--项目列表-->
     <div class="item-list">
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/kafka.jpg?imageslim&amp;imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Kafka</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
-        </div>
-      </div>
 
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/spark.jpg?imageslim&imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Spark</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Spark是类Hadoop MapReduce的通用并行框架，拥有Hadoop MapReduce所具有的优点，能更好地适用于数据挖掘与机器学习等需要迭代的MapReduce的算法。</p>
-        </div>
-      </div>
+      <!-- loading -->
+      <loading v-show="!topicList.length"></loading>
 
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/docker.jpg?imageslim&imageMogr2/thumbnail/400x220!">
+      <div v-for="(item, index) in topicList" :key="index" class="item">
+        <img v-lazy="item.imgSrc">
         <div class="thumbnail-caption">
-          <h3 class="title">Docker</h3>
+          <h3 class="title">{{ item.title }}</h3>
           <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
+            <span class="collectCount">{{ item.collectCount }}&nbsp; &nbsp;收录资源</span>
             &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
+            <span class="careCount">{{ item.careCount }}&nbsp; &nbsp;关注者</span>
           </p>
-          <p class="desc">Docker是一个可以将任何应用包装在"LXC容器”中运行的工具。如果说VMware、KVM包装的虚拟机，那该工具包装的则是应用。它是一个实至名归的PaaS。</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/hadoop.jpg?imageslim&imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Hadoop</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/openstack.jpg?imageslim&imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Openstack</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/nodejs7.jpg?imageslim&imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Node.js</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Node.js是一个基于Chrome JavaScript运行时建立的平台，使用事件驱动、非阻塞I/O 模型而得以轻量和高效，适合在分布式设备上运行数据密集型的实时应用.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/kafka.jpg?imageslim&amp;imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Kafka</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/kafka.jpg?imageslim&amp;imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Kafka</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="https://assets.lambda-study.com/lambda/kafka.jpg?imageslim&amp;imageMogr2/thumbnail/400x220!">
-        <div class="thumbnail-caption">
-          <h3 class="title">Kafka</h3>
-          <p class="info">
-            <span class="collectCount">6&nbsp; &nbsp;收录资源</span>
-            &nbsp;|&nbsp;
-            <span class="collectCount">136&nbsp; &nbsp;关注者</span>
-          </p>
-          <p class="desc">Kafka是一种高吞吐量的分布式发布订阅消息系统。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
+          <p class="desc">{{ item.desc }}</p>
         </div>
       </div>
     </div>
 
-    <div class="more">
+    <div v-if="topicList.length" class="more">
       <button>加载更多</button>
     </div>
   </div>
 </template>
 
 <script>
+  import Loading from '../loading/loading'
   import MBanner from '../m-banner/m-banner'
+  import * as homeApi from '../../api/home'
 
   export default {
     data() {
-      return {}
+      return {
+        categoryTags: [], // 分类标签列表
+        topicList: [],    // 首页主题项列表
+      }
+    },
+    created() {
+      this.getCategoryTags();
+      this.findTopicList();
+    },
+    methods: {
+      // 获取分类标签列表
+      async getCategoryTags() {
+        let ret = await homeApi.getTags();
+        if(ret) {
+          ret.data.sort((e1, e2) => e1.orderNo - e2.orderNo);
+        }
+        this.categoryTags = ret.data;
+      },
+
+      // 获取主题项列表
+      async findTopicList() {
+        let ret = await homeApi.getHomeTopic();
+        this.topicList = ret.data;
+      },
+
+      // 切换选中该标签
+      toggleCategory(tag) {
+        this.categoryTags.map( (item) => {
+          if(item == tag) {
+            item.isActive = true;
+          }else {
+            item.isActive = false;
+          }
+        });
+      },
     },
     components: {
-      MBanner
+      MBanner,
+      Loading
     }
   }
 </script>

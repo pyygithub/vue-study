@@ -23,8 +23,11 @@
         <Col span="8">
         <h3 class="f-title">联系方式</h3>
         <ul class="f-item-list">
-          <li><router-link to="/home" tag="a">QQ: 653183478</router-link></li>
-          <li><router-link to="/home" tag="a">微信: panyangyang07</router-link></li>
+          <li>QQ: 653183478</li>
+          <li class="weixin">
+            微信: panyangyang07
+            <img src="./weixin.png"/>
+          </li>
         </ul>
         </Col>
       </Row>
@@ -68,9 +71,23 @@
         display: flex;
         align-items: center;
         height: 30px;
+        color:#a9bdcb;
+        cursor:pointer;
         a {
           color:#a9bdcb;
         }
+      }
+      .weixin {
+        img {
+          border: 1px solid #ccc;
+          padding: 3px;
+          position: relative;
+          top: -10px;
+          right: -53px;
+          width:150px;
+          height: 150px;
+        }
+
       }
     }
     .declaration {

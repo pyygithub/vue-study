@@ -53,7 +53,6 @@
     position: fixed;
     z-index: 9999;
     width: 100%;
-    min-width: 1170px;
     display: flex;
     align-items: center;
     justify-content: space-between;
